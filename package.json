@@ -14,10 +14,18 @@
   "contributes": {
     "commands": [
       {
-        "command": "llm-clipboard.helloWorld",
-        "title": "Hello World"
+        "command": "llm-clipboard.copy",
+        "title": "Copy File With Name"
       }
-    ]
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "llm-clipboard.copy",
+          "group": "navigation"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run package",
