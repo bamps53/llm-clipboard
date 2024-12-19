@@ -1,71 +1,92 @@
-# llm-clipboard README
+# LLM Clipboard
 
-This is the README for your extension "llm-clipboard". After writing up a brief description, we recommend including the following sections.
+This VS Code extension enhances your copy-paste workflow by adding the filename to the beginning of the copied content.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- Adds a "Copy File With Name" option to the Explorer context menu.
+- When selected, copies the file content with the filename prepended.
 
-For example if there is an image subfolder under your extension project workspace:
+## Usage
 
-\!\[feature X\]\(images/feature-x.png\)
+1. Right-click on a file in the Explorer.
+2. Select "Copy File With Name" from the context menu.
+3. Paste the content into your desired location. The filename will be at the beginning.
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## Installation
 
-## Requirements
+**Prerequisites:**
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+- [Node.js](https://nodejs.org/) and npm (or yarn) installed.
+- [Visual Studio Code](https://code.visualstudio.com/)
 
-## Extension Settings
+**Steps:**
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+1. **Clone the repository:**
+   ```bash
+   git clone <your-repository-url>
+   cd llm-clipboard
+   ```
 
-For example:
+2. **Install dependencies:**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-This extension contributes the following settings:
+3. **Build the extension:**
+   ```bash
+   npm run compile
+   # or
+   yarn compile
+   ```
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+4. **Install the extension in VS Code:**
+   - Open VS Code.
+   - Go to the Extensions view (`Ctrl+Shift+X` or `Cmd+Shift+X`).
+   - Click on the "..." menu in the Extensions view and select "Install from VSIX...".
+   - Navigate to the project directory and select the `llm-clipboard-x.x.x.vsix` file (you may need to package it first, see development section).
 
-## Known Issues
+## Development
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+1. **Clone the repository:**
+   ```bash
+   git clone <your-repository-url>
+   cd llm-clipboard
+   ```
 
-## Release Notes
+2. **Install dependencies:**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-Users appreciate release notes as you update your extension.
+3. **Open the project in VS Code.**
 
-### 1.0.0
+4. **Run the extension in development mode:**
+   - Press `F5` to open a new VS Code window with the extension loaded.
 
-Initial release of ...
+5. **Package the extension (for distribution):**
+   ```bash
+   npm install -g vsce
+   vsce package
+   ```
+   This will create a `llm-clipboard-x.x.x.vsix` file in your project directory.
 
-### 1.0.1
+## Contributing
 
-Fixed issue #.
+[Describe how users can contribute to your project]
 
-### 1.1.0
+## License
 
-Added features X, Y, and Z.
+MIT
 
----
+## TODO
+- ファイル名はファイルの内容と区別可能なように、コメントとして付与
+- 複数ファイルに対応
+- 過去のコピーしたファイルリストを記憶しておく（再度コピーしたときは最新の内容に更新される）
+- 
 
-## Following extension guidelines
 
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**

@@ -6,7 +6,7 @@ export function activate(context: vscode.ExtensionContext) {
     "llm-clipboard.copy",
     async (resource: vscode.Uri) => {
       if (!resource) {
-        return;
+        return; // Exit if no file is selected
       }
 
       const fileName = path.basename(resource.fsPath);
@@ -20,10 +20,10 @@ export function activate(context: vscode.ExtensionContext) {
           );
         });
       } else {
-        // If there is no active editor, copy to clipboard
+        // If no active editor, copy to clipboard
         await vscode.env.clipboard.writeText(fileName + "\n" + "${clipboard}");
         vscode.window.showInformationMessage(
-          `Copied file name "${fileName}" to clipboard.`
+          `Copied with filename: "${fileName}"`
         );
       }
     }
